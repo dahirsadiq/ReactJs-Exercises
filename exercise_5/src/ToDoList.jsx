@@ -24,18 +24,25 @@ const ToDoList =()=>{
              setProducts(updatedProducts);
 
          }
+        //  Remove from the cart
+
+        const handleDelete=(id)=>{
+            const UpdatedProducts=products.filter((product)=> product.id !== id);
+            setProducts(UpdatedProducts);
+
+        }
 
      
      const handleAddCart=()=>{
         const newProduct={
-            id:Date.now,
+            id:Date.now(),
             name:name,
             price:price,
             quantity:1
         }
         setProducts([...products ,newProduct]);
-        setName("");
-        setPrice("");
+        setName('');
+        setPrice('');
         
      }
 
@@ -45,28 +52,30 @@ const ToDoList =()=>{
    
 
     return(
+        
         <div>
             <h2>Add a Product</h2>
-            <input type="text" placeholder="enter product" onChange={(e)=>setName(e.target.value)}/>
-            <input type="number" placeholder="enter price"onChange={(e)=>setPrice(e.target.value)} />
+            <input type="text" value={name} placeholder="enter product" required onChange={(e)=>setName(e.target.value)}/>
+            <input type="number" value={price}  placeholder="enter price" required onChange={(e)=>setPrice(e.target.value)} />
             <button onClick={handleAddCart}>Add to Cart</button>
 
             <h2>Products in the Cart</h2>
             <ul>
                 {products.map(product =>(
-                    <li key={product.id}> <strong>{product.name}</strong>
-                        :{product.price}<br></br>
+                    <li key={product.id}> <strong>{product.name}</strong>  : {product.price}<br></br>
 
-                        <strong>Quantity:</strong>  <div>
-                           {product.quantity}
+                        <strong>Quantity:</strong><div>
+                            {product.quantity}
                             <button onClick={()=>handleIncreaseQuantity(product.id)}>+</button>
                             <button onClick={()=>handleDecreaseQuantity(product.id)}>-</button>
                         </div>
+                        <button onClick={()=>handleDelete(product.id)}>Remove</button>
                         </li>
                 ))}
             </ul>
+            
 
-            <h2>the total price is{Totalprice} {}</h2>
+            <h2>the total price is  : {Totalprice}</h2>
 
 
         </div>
