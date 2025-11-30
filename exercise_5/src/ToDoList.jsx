@@ -7,6 +7,13 @@ const ToDoList =()=>{
     const [products ,setProducts]=useState([]);
     const [name,setName]=useState("");
      const [price,setPrice]=useState();
+     const handleIncreaseQuantity =(id)=>{
+            const updatedProducts=products.map(product=>(
+                product.id ===id? {...product ,quantity:product.quantity +1}:product
+            ))
+             setProducts(updatedProducts);
+
+        }
      
      const handleAddCart=()=>{
         const newProduct={
@@ -16,7 +23,13 @@ const ToDoList =()=>{
             quantity:1
         }
 
-        setProducts(...products ,newProduct);
+        // const handleDecreaseQuantity=(id)=>{
+
+        // }
+
+        
+
+        setProducts([...products ,newProduct]);
         setName("");
         setPrice("");
         
@@ -32,13 +45,14 @@ const ToDoList =()=>{
             <h2>Products in the Cart</h2>
             <ul>
                 {products.map(product =>(
-                    <li> <strong>{product.name}</strong>
-                        :{product.price}
-                        <quantity:div>
+                    <li key={product.id}> <strong>{product.name}</strong>
+                        :{product.price}<br></br>
+
+                        Quantity:<div>
                             <button>-</button>
                             {product.quantity}
-                            <button>+</button>
-                        </quantity:div>
+                            <button onClick={()=>handleIncreaseQuantity(product.id)}>+</button>
+                        </div>
                         </li>
                 ))}
             </ul>
