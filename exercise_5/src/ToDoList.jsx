@@ -54,12 +54,14 @@ const ToDoList =()=>{
     return(
         
         <div>
+        
             <h2>Add a Product</h2>
             <input type="text" value={name} placeholder="enter product" required onChange={(e)=>setName(e.target.value)}/>
             <input type="number" value={price}  placeholder="enter price" required onChange={(e)=>setPrice(e.target.value)} />
             <button onClick={handleAddCart}>Add to Cart</button>
-
-            <h2>Products in the Cart</h2>
+            { products.length >0 ?(
+                <>
+                <h2>Products in the Cart</h2>
             <ul>
                 {products.map(product =>(
                     <li key={product.id}> <strong>{product.name}</strong>  : {product.price}<br></br>
@@ -76,7 +78,10 @@ const ToDoList =()=>{
             
 
             <h2>the total price is  : {Totalprice}</h2>
-
+</>
+            ):<p>the product cart is empty</p>
+            }
+            
 
         </div>
     )
