@@ -6,7 +6,7 @@ import UsersList from './UsersList'
 
 function App() {
   
-  // const [usersList , setUsersList]= useState([]);
+ 
   const users=[
     { id:1 , name:"Ali Hamud",email:"alihamud2000@gmail.com"},
     {id:2 , name:"Ahmed Mohamed Farah", email:"ahmedsaadiq@gmail.com"},
