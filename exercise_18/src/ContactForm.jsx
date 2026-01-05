@@ -1,13 +1,19 @@
-import { useState } from "react";
+import { useState , useEffect } from "react";
 import { useContext } from "react";
 import ContactContext from "./ContactContext";
 
 const ContactForm=()=>{
-    const {dispatch}=useContext(ContactContext);
+    const {dispatch, editingContact , setEditingContact}=useContext(ContactContext);
     
 
-    const [contact , setContact]=useState({ name:"", email:"", phone:""});
+    const [contact , setContact]=useState(editingContact || { name:"", email:"", phone:""});
     const [isEditing , setIsEditing]=useState(false);
+    useEffect(() => {
+    if (editingContact) {
+      setContact(editingContact);
+      setIsEditing(true);
+    }
+  }, [editingContact]);
     const handleChange=(e)=>{
         e.preventDefault();
         const {name ,value}= e.target;
@@ -17,6 +23,10 @@ const ContactForm=()=>{
        
 
     }
+const handleCancelEdit = () => {
+    setContact({ name: '', email: '', phone: '' });
+    setIsEditing(false);
+  };
 
   
 
