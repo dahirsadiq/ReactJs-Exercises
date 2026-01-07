@@ -1,0 +1,43 @@
+/* TodoItem.module.css */
+.item {
+  display: flex;
+  align-items: center;
+  background-color: #f8f9fa; 
+  padding: 16px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+.checkbox {
+  width: 20px;
+  height: 20px;
+  margin-right: 15px;
+  accent-color: #007bff; 
+  cursor: pointer;
+}
+
+.text {
+  flex: 1;
+  font-size: 16px;
+  color: #4a5568;
+  cursor: pointer;
+}
+
+
+.completedText {
+  text-decoration: line-through;
+  color: #a0aec0; 
+}
+
+.deleteBtn {
+  background: none;
+  border: none;
+  color: #e53e3e; 
+  font-weight: 600;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.deleteBtn:hover {
+  text-decoration: underline;
+}

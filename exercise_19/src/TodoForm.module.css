@@ -1,0 +1,26 @@
+/* TodoForm.module.css */
+.form {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.input {
+  flex: 1;
+  padding: 14px 18px;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  background-color: white;
+  font-size: 16px;
+  outline: none;
+}
+
+.addBtn {
+  background-color: #8b2cf5; 
+  color: white;
+  border: none;
+  padding: 0 25px;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
