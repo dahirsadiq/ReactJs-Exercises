@@ -1,0 +1,10 @@
+@import "tailwindcss";
+/* index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-gray-300 antialiased; /* Main background color gray */
+}
+
