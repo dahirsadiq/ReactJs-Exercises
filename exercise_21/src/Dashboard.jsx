@@ -28,8 +28,8 @@ const courses = [
 
     return(
         <>
-        <div className="min-h-screen bg-gray-50 py-8 px-4">
-      <div className="max-w-7xl mx-auto">
+        <div className="min-h-screen bg-gray-50 py-8 px-4 font-sans selection:bg-pink-500 selection:text-white">
+      <div className="max-w-7xl mx-auto ">
         {/* Header Section */}
         <div className="bg-white rounded-2xl shadow-sm p-6 mb-6">
           <div className="flex items-center justify-between">
