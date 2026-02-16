@@ -27,7 +27,6 @@ const TodoItem = ({ todo }) => {
 
       {/* Delete button appears when item is completed */}
       {todo.completed && (
-        
         <button
           className="text-red-500 font-bold text-sm ml-2 hover:underline"
           onClick={() => dispatch({ type: 'delete', payload: todo.id })}

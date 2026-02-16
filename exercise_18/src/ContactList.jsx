@@ -19,7 +19,6 @@ const ContactList = () => {
           </p>
           <button onClick={() => dispatch({ type: 'toggle', payload:contact.id })}>
           {contact.favorite ? 'Unfavorite' : 'Favorite'}
-         
         </button>
               <button onClick={() => setEditingContact(contact)}>Edit</button>
           <button

@@ -32,7 +32,6 @@ const handleCancelEdit = () => {
 
      const handleSubmit = (e) => {
     e.preventDefault();
-    
     if (contact.name && contact.email && contact.phone) {
       if (isEditing) {
         dispatch({ type: 'edit', payload: contact });
@@ -41,10 +40,7 @@ const handleCancelEdit = () => {
         dispatch({
           type: 'add',
           payload: { ...contact, id: Date.now(), favorite: false },
-          
         });
-        
-        
       }
       setContact({ name: '', email: '', phone: '' });
     }
@@ -64,7 +60,6 @@ const handleCancelEdit = () => {
              <input type="number" name="phone" placeholder="enter your phone :" value={contact.phone} onChange={handleChange} />
              <button  type='submit'>{isEditing ?'Update':'Add'}</button>
               {isEditing && <button onClick={handleCancelEdit}>Cancel</button>}
-              
            </form>
         </div>
     )
